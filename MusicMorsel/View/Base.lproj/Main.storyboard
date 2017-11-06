@@ -13,7 +13,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MusicMorsel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="MusicMorsel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,13 +22,19 @@
                                 <rect key="frame" x="0.0" y="76" width="375" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="62" id="rHg-wd-Y3L" userLabel="SongCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="62" id="rHg-wd-Y3L" userLabel="SongCell" customClass="SongCell" customModule="MusicMorsel" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rHg-wd-Y3L" id="5k5-P3-pU1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqB-Jg-Oqg" userLabel="Title Label">
+                                                    <rect key="frame" x="14" y="8" width="31.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCs-h2-U3c" userLabel="Artist Label">
                                                     <rect key="frame" x="14" y="26.5" width="35.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -47,29 +53,32 @@
                                                     <state key="normal" title="Cancel">
                                                         <color key="titleColor" red="0.2771369125" green="0.65276205570000001" blue="0.1638851616" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="cancelTapped:" destination="rHg-wd-Y3L" eventType="touchUpInside" id="Nyv-1F-jYM"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylu-ks-fuL" userLabel="Pause Button">
                                                     <rect key="frame" x="269" y="9" width="42" height="30"/>
                                                     <state key="normal" title="Pause">
                                                         <color key="titleColor" red="0.2771369125" green="0.65276205570000001" blue="0.1638851616" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="pauseOrResumeTapped:" destination="rHg-wd-Y3L" eventType="touchUpInside" id="m5q-qI-nLG"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNU-su-hFg" userLabel="Download Button">
                                                     <rect key="frame" x="289" y="9" width="69" height="30"/>
                                                     <state key="normal" title="Download">
                                                         <color key="titleColor" red="0.2771369125" green="0.65276205570000001" blue="0.1638851616" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="downloadTapped:" destination="rHg-wd-Y3L" eventType="touchUpInside" id="O1s-4Q-og9"/>
+                                                    </connections>
                                                 </button>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Idk-FL-SO4">
                                                     <rect key="frame" x="14" y="49.5" width="259" height="2"/>
                                                     <color key="tintColor" red="0.2771369125" green="0.65276205570000001" blue="0.1638851616" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </progressView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqB-Jg-Oqg" userLabel="Title Label">
-                                                    <rect key="frame" x="14" y="8" width="31.5" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="036-Uu-gCg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5k5-P3-pU1" secondAttribute="leading" constant="20" symbolic="YES" id="3Fi-F7-bjc"/>
@@ -95,6 +104,15 @@
                                                 <constraint firstItem="U75-ro-X6i" firstAttribute="top" secondItem="5k5-P3-pU1" secondAttribute="top" constant="9" id="vnb-Uy-MZP"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artistLabel" destination="GCs-h2-U3c" id="BRj-It-MsC"/>
+                                            <outlet property="cancelButton" destination="U75-ro-X6i" id="CQv-Ev-UZl"/>
+                                            <outlet property="downloadButton" destination="TNU-su-hFg" id="esi-OO-gXk"/>
+                                            <outlet property="pauseButton" destination="ylu-ks-fuL" id="6xs-bf-Lav"/>
+                                            <outlet property="progressLabel" destination="036-Uu-gCg" id="Dhb-aO-W9m"/>
+                                            <outlet property="progressView" destination="Idk-FL-SO4" id="vvT-IZ-8UE"/>
+                                            <outlet property="titleLabel" destination="jqB-Jg-Oqg" id="6m3-lK-a3W"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -117,6 +135,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="fhY-e9-nee"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="kOb-qL-ZRK" id="57k-pJ-aG0"/>
+                        <outlet property="tableView" destination="KuJ-OR-PD4" id="0gS-qB-Yvd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
