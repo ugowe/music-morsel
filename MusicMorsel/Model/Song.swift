@@ -6,7 +6,7 @@
 //  Copyright © 2017 Joseph Ugowe. All rights reserved.
 //
 
-import UIKit
+import Foundation.NSURL
 
 class Song: NSObject {
     

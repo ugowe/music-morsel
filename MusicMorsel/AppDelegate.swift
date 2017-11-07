@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let tintColor = UIColor(red: 54/255, green: 128/255, blue: 243/255, alpha: 1)
+    let tintColor = UIColor(red: 53/255, green: 94/255, blue: 59/255, alpha: 1)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
