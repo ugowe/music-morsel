@@ -44,6 +44,7 @@ class QueryService {
                     }
                 }
             }
+            
             dataTask?.resume()
         }
     }

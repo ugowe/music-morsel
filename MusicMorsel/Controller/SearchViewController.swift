@@ -29,10 +29,16 @@ class SearchViewController: UIViewController {
         return documentsPath.appendingPathComponent(url.lastPathComponent)
     }
     
+    lazy var downloadSession: URLSession = {
+        let configuration = URLSessionConfiguration.default
+        return URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableView.tableFooterView = UIView()
+        downloadService.downloadsSession = downloadSession 
     }
     
     func playDownload(_ song: Song) {
@@ -60,7 +66,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         cell.delegate = self
         
         let song = searchResults[indexPath.row]
-        cell.configure(song: song, downloaded: song.downloaded)
+        cell.configure(song: song, downloaded: song.downloaded, download: downloadService.activeDownloads[song.morselURL])
         
         return cell
     }

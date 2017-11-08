@@ -11,6 +11,8 @@
 		A71E609C1FAFEDAA00AEBEF0 /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71E609B1FAFEDAA00AEBEF0 /* DownloadService.swift */; };
 		A71E609F1FAFEF5800AEBEF0 /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71E609E1FAFEF5800AEBEF0 /* StoryboardSupport.swift */; };
 		A71E60A11FAFF2CE00AEBEF0 /* SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71E60A01FAFF2CE00AEBEF0 /* SearchBarDelegate.swift */; };
+		A775AD0F1FB36A5C0057B904 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775AD0E1FB36A5C0057B904 /* Download.swift */; };
+		A775AD111FB36C430057B904 /* URLSessionDownloadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A775AD101FB36C430057B904 /* URLSessionDownloadDelegate.swift */; };
 		A7AEEA031FAE326900D0E70B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AEEA021FAE326900D0E70B /* AppDelegate.swift */; };
 		A7AEEA051FAE326900D0E70B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AEEA041FAE326900D0E70B /* SearchViewController.swift */; };
 		A7AEEA081FAE326900D0E70B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7AEEA061FAE326900D0E70B /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		A71E609B1FAFEDAA00AEBEF0 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
 		A71E609E1FAFEF5800AEBEF0 /* StoryboardSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardSupport.swift; sourceTree = "<group>"; };
 		A71E60A01FAFF2CE00AEBEF0 /* SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarDelegate.swift; sourceTree = "<group>"; };
+		A775AD0E1FB36A5C0057B904 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		A775AD101FB36C430057B904 /* URLSessionDownloadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDownloadDelegate.swift; sourceTree = "<group>"; };
 		A7AEE9FF1FAE326900D0E70B /* MusicMorsel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicMorsel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7AEEA021FAE326900D0E70B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7AEEA041FAE326900D0E70B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			children = (
 				A7AEEA041FAE326900D0E70B /* SearchViewController.swift */,
 				A71E60A01FAFF2CE00AEBEF0 /* SearchBarDelegate.swift */,
+				A775AD101FB36C430057B904 /* URLSessionDownloadDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				A7AEEA331FAE38AC00D0E70B /* Song.swift */,
+				A775AD0E1FB36A5C0057B904 /* Download.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A775AD0F1FB36A5C0057B904 /* Download.swift in Sources */,
 				A71E60A11FAFF2CE00AEBEF0 /* SearchBarDelegate.swift in Sources */,
 				A7AEEA361FAE61C200D0E70B /* SongCell.swift in Sources */,
 				A7AEEA341FAE38AC00D0E70B /* Song.swift in Sources */,
@@ -324,6 +331,7 @@
 				A7AEEA051FAE326900D0E70B /* SearchViewController.swift in Sources */,
 				A7AEEA031FAE326900D0E70B /* AppDelegate.swift in Sources */,
 				A71E609C1FAFEDAA00AEBEF0 /* DownloadService.swift in Sources */,
+				A775AD111FB36C430057B904 /* URLSessionDownloadDelegate.swift in Sources */,
 				A71E609F1FAFEF5800AEBEF0 /* StoryboardSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -44,13 +44,22 @@ class SongCell: UITableViewCell {
         delegate?.downloadTapped(self)
     }
     
-    func configure(song: Song, downloaded: Bool) {
+    func configure(song: Song, downloaded: Bool, download: Download?) {
         titleLabel.text = song.name
         artistLabel.text = song.artist
+        var showDownloadControls = false
         
+        if let download = download {
+            showDownloadControls = true
+            let title = download.isDownloading ? "Pause" : "Resume"
+            pauseButton.setTitle(title, for: .normal)
+        }
+        
+        pauseButton.isHidden = !showDownloadControls
+        cancelButton.isHidden = !showDownloadControls
         
         selectionStyle = downloaded ? UITableViewCellSelectionStyle.gray : UITableViewCellSelectionStyle.none
-        downloadButton.isHidden = downloaded
+        downloadButton.isHidden = downloaded || showDownloadControls
     }
 //    override func awakeFromNib() {
 //        super.awakeFromNib()
