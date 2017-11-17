@@ -29,15 +29,15 @@ class SongCell: UITableViewCell {
     
     
     @IBAction func cancelTapped(_ sender: Any) {
+        delegate?.cancelTapped(self)
+    }
+    
+    @IBAction func pauseOrResumeTapped(_ sender: Any) {
         if (pauseButton.titleLabel?.text == "Pause") {
             delegate?.pauseTapped(self)
         } else {
             delegate?.resumeTapped(self)
         }
-    }
-    
-    @IBAction func pauseOrResumeTapped(_ sender: Any) {
-        delegate?.cancelTapped(self)
     }
     
     @IBAction func downloadTapped(_ sender: Any) {

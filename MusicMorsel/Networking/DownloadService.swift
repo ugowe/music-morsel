@@ -14,7 +14,7 @@ class DownloadService {
     // SearchViewController creates downloadsSession
     var downloadsSession: URLSession!
     
-    // MARK: - Download methods called by TrackCell delegate methods
+    // MARK: - Download methods called by SongCell delegate methods
     
     func startDownload(_ song: Song) {
         
